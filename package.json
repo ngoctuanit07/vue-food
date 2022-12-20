@@ -9,10 +9,13 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "start": "node server.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "express": "^4.16.4",
+    "gh-pages": "^4.0.0",
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vue-slider-component": "^2.8.0",

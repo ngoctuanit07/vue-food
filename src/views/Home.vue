@@ -22,7 +22,7 @@
                 </select>
                 <br>
                 <div class="btn-xacnhan">
-                  <a href="/thucdon">Xác nhận</a>
+                  <a @click="chuyenthucdon()">Xác nhận</a>
                 </div>
 
               </form>
@@ -124,8 +124,8 @@
       <div class="menu">
         <div class="menu-silbar-h" id="nav">
           <ul>
-            <li><a href="index.html" class="tracuu">Trang chủ</a></li>
-            <li><a href="tracuudonhang.html" class="tracuu">Tra cứu đơn hàng</a></li>
+            <li><a href="/"  class="tracuu">Trang chủ</a></li>
+            <li><a @click="chuyentracuudonhang()" class="tracuu">Tra cứu đơn hàng</a></li>
             <li>Về Chúng Tôi</li>
             <li>Chính Sách VFOOD.PH</li>
             <li>Chính sách và phí giao hàng</li>
@@ -192,13 +192,31 @@
 </template>
 
 <script>
-import Carousel from '@/Components/HomePage/Carousel.vue'
-import AboutUs from '@/Components/HomePage/AboutUs.vue'
-
 export default {
-  components: {
-    Carousel, AboutUs
+  name:"Home",
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+    chuyenthucdon(){
+      this.$router.push('Thucdon')
+    },
+    chuyenhomepage(){
+      this.$router.push('Home')
+    },
+    chuyentracuudonhang(){
+      this.$router.push('Tracuudon')
+    }
+
   }
 }
 
 </script>
+<style scoped>
+a:not([href]):not([tabindex]) {
+  color: #487025;
+  text-decoration: none;
+}
+</style>

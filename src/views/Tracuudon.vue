@@ -147,8 +147,8 @@
       <div class="menu ">
         <div class="menu-silbar-h" id="nav">
           <ul>
-            <li><a href="index.html" class="tracuu">Trang chủ</a></li>
-            <li><a href="tracuudonhang.html" class="tracuu">Tra cứu đơn hàng</a></li>
+            <li><a href="/"  class="tracuu">Trang chủ</a></li>
+            <li><a @click="tracuudon()"  class="tracuu">Tra cứu đơn hàng</a></li>
             <li>Về Chúng Tôi</li>
             <li>Chính Sách VFOOD.PH</li>
             <li>Chính sách và phí giao hàng</li>
@@ -296,7 +296,29 @@
 
 <script>
 export default {
-  name: "Tracuudon"
+  name: "Tracuudon",
+  data(){
+    return{
+
+    }
+  },
+  methods:{
+    chuyenhome(){
+      this.$router.push('Home')
+    },
+    chuyenthucdon(){
+      this.$router.push('Thucdon')
+    },
+    tracuudon(){
+      this.$router.push('Tracuudon')
+    },
+  }
 }
 
 </script>
+<style scoped>
+a:not([href]):not([tabindex]) {
+  color: #487025;
+  text-decoration: none;
+}
+</style>

@@ -8,7 +8,7 @@
 
             <div class="main-ttgh">
               <div class="btn-back">
-                <a href="thucdon.html"><i class="fa fa-arrow-left" aria-hidden="true">Quay lại</i></a>
+                <a @click="chuyenthucdon()"><i class="fa fa-arrow-left" aria-hidden="true">Quay lại</i></a>
               </div>
               <div class="thongtin">
                 <h1>THÔNG TIN GIAO HÀNG</h1>
@@ -169,7 +169,7 @@
                 </div>
               </div>
               <div class="btn-tongtien">
-                <a href="/hoanthanhdon">Hoàn Thành</a>
+                <a @click="chuyenhoanthanhdon()">Hoàn Thành</a>
               </div>
             </div>
           </div>
@@ -189,8 +189,8 @@
       <div class="menu ">
         <div class="menu-silbar-h" id="nav">
           <ul>
-            <li><a href="index.html" class="tracuu">Trang chủ</a></li>
-            <li><a href="tracuudonhang.html" class="tracuu">Tra cứu đơn hàng</a></li>
+            <li><a href="/"  class="tracuu">Trang chủ</a></li>
+            <li><a @click="tracuudon()"  class="tracuu">Tra cứu đơn hàng</a></li>
             <li>Về Chúng Tôi</li>
             <li>Chính Sách VFOOD.PH</li>
             <li>Chính sách và phí giao hàng</li>
@@ -202,7 +202,7 @@
         </div>
       </div>
       <div class="btn-backs">
-        <a href="/thucdon"><i class="fa fa-arrow-left" aria-hidden="true">Quay lại</i></a>
+        <a @click="chuyenthucdon()"><i class="fa fa-arrow-left" aria-hidden="true">Quay lại</i></a>
       </div>
 
 
@@ -316,7 +316,7 @@
       <div class="formthongtin  ">
         <div class="main-ttgh main-mobile">
           <div class="btn-back">
-            <a href="/thucdon"><i class="fa fa-arrow-left" aria-hidden="true">Quay lại</i></a>
+            <a @click="chuyenthucdon()"><i class="fa fa-arrow-left" aria-hidden="true">Quay lại</i></a>
           </div>
           <div class="thongtin">
             <h1>THÔNG TIN GIAO HÀNG</h1>
@@ -359,7 +359,7 @@
             <label class="dongy" for="vehicle1">Đồng ý với điểu khoản đặt hàng của VFOOD.PH <br> <a href=""><span>xem chi tiết các điều khoản tại đây >> </span></a>
             </label><br>
             <div class="btn-hoanthanh">
-              <a href="/hoanthanhdon">Hoàn Thành</a>
+              <a @click="chuyenhoanthanhdon()">Hoàn Thành</a>
             </div>
           </form>
         </div>
@@ -368,9 +368,25 @@
     </div>
   </div>
 </template>
-
+<style scoped>
+a:not([href]):not([tabindex]) {
+  color: #487025;
+  text-decoration: none;
+}
+</style>
 <script>
 export default {
-  name:"Thongtindon"
+  name: "Thongtindon",
+  data() {
+    return {}
+  },
+  methods: {
+    chuyenhoanthanhdon() {
+      this.$router.push('Hoanthanhdon')
+    },
+    chuyenthucdon() {
+      this.$router.push('Thucdon')
+    }
+  }
 }
 </script>

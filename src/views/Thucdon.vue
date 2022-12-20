@@ -469,8 +469,8 @@
       <div class="menu ">
         <div class="menu-silbar-h menu-thucdon" id="nav">
           <ul>
-            <li><a href="index.html" class="tracuu">Trang chủ</a></li>
-            <li><a href="tracuudonhang.html" class="tracuu">Tra cứu đơn hàng</a></li>
+            <li><a href="/"  class="tracuu">Trang chủ</a></li>
+            <li><a href="/"  c class="tracuu">Tra cứu đơn hàng</a></li>
             <li>Về Chúng Tôi</li>
             <li>Chính Sách VFOOD.PH</li>
             <li>Chính sách và phí giao hàng</li>
@@ -1148,7 +1148,7 @@
           <div class="thanhtoan thanhtoan-mobile">
             <p>Giỏ hàng: 2 món</p>
             <p>P300</p>
-            <a href="/thongtindon">Thanh toán</a>
+            <a @click="thanhtoanDon()">Thanh toán</a>
           </div>
           <a href="#" class="modal__close modal-chitiet-close">&times;</a>
 
@@ -1158,6 +1158,12 @@
     </div>
   </div>
 </template>
+<style scoped>
+a:not([href]):not([tabindex]) {
+  color: #487025;
+  text-decoration: none;
+}
+</style>
 
 <script>
 export default {

@@ -147,12 +147,13 @@
       <div class="menu ">
         <div class="menu-silbar-h" id="nav">
           <ul>
-            <li><a href="/"  class="tracuu">Trang chủ</a></li>
-            <li><a @click="tracuudon()"  class="tracuu">Tra cứu đơn hàng</a></li>
-            <li>Về Chúng Tôi</li>
-            <li>Chính Sách VFOOD.PH</li>
-            <li>Chính sách và phí giao hàng</li>
-            <li>Blog</li>
+<!--            <li><a href="/"  class="tracuu">Trang chủ</a></li>-->
+<!--            <li><a @click="tracuudon()"  class="tracuu">Tra cứu đơn hàng</a></li>-->
+<!--            <li>Về Chúng Tôi</li>-->
+<!--            <li>Chính Sách VFOOD.PH</li>-->
+<!--            <li>Chính sách và phí giao hàng</li>-->
+<!--            <li>Blog</li>-->
+            <li v-for="(item,i) in menuFooter" :key="i">{{item.name}}</li>
           </ul>
           <div class="icon-close" onclick=close_nav()>
             <i class="fa fa-times" aria-hidden="true"></i>
@@ -295,12 +296,18 @@
 </template>
 
 <script>
+import actionFood from "@/actions/food";
+
 export default {
   name: "Tracuudon",
   data(){
     return{
+      menuFooter:[]
 
     }
+  },
+  mounted() {
+    this.getMenuFooter()
   },
   methods:{
     chuyenhome(){
@@ -311,6 +318,13 @@ export default {
     },
     tracuudon(){
       this.$router.push('Tracuudon')
+    },
+    getMenuFooter() {
+      let vm = this;
+      actionFood.getMenuFooter().then(function (res) {
+        vm.menuFooter = res.data;
+      })
+
     },
   }
 }

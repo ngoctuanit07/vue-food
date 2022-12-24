@@ -179,7 +179,7 @@
     </div>
     <div class="thongtingiaohang-mobile">
       <div class="header imp">
-        <div class="logo imps"><a href="index.html">VFOOD.COM</a></div>
+        <div class="logo imps"><a href="/">VFOOD.COM</a></div>
         <div class="btn-mobile">
           <a href="#modal" class="btn-thucdon-mobile">THỰC ĐƠN</a>
           <a href=""><img src="@/assets/ngon-ngu-mobile.png" alt="" width="80%"></a>
@@ -189,12 +189,13 @@
       <div class="menu ">
         <div class="menu-silbar-h" id="nav">
           <ul>
-            <li><a href="/"  class="tracuu">Trang chủ</a></li>
-            <li><a @click="tracuudon()"  class="tracuu">Tra cứu đơn hàng</a></li>
-            <li>Về Chúng Tôi</li>
-            <li>Chính Sách VFOOD.PH</li>
-            <li>Chính sách và phí giao hàng</li>
-            <li>Blog</li>
+<!--            <li><a href="/"  class="tracuu">Trang chủ</a></li>-->
+<!--            <li><a @click="tracuudon()"  class="tracuu">Tra cứu đơn hàng</a></li>-->
+<!--            <li>Về Chúng Tôi</li>-->
+<!--            <li>Chính Sách VFOOD.PH</li>-->
+<!--            <li>Chính sách và phí giao hàng</li>-->
+<!--            <li>Blog</li>-->
+            <li v-for="(item,i) in menuFooter" :key="i">{{item.name}}</li>
           </ul>
           <div class="icon-close" onclick=close_nav()>
             <i class="fa fa-times" aria-hidden="true"></i>
@@ -375,10 +376,17 @@ a:not([href]):not([tabindex]) {
 }
 </style>
 <script>
+import actionFood from "@/actions/food";
+
 export default {
   name: "Thongtindon",
   data() {
-    return {}
+    return {
+      menuFooter:[]
+    }
+  },
+  mounted() {
+    this.getMenuFooter();
   },
   methods: {
     chuyenhoanthanhdon() {
@@ -386,7 +394,14 @@ export default {
     },
     chuyenthucdon() {
       this.$router.push('Thucdon')
-    }
+    },
+    getMenuFooter() {
+      let vm = this;
+      actionFood.getMenuFooter().then(function (res) {
+        vm.menuFooter = res.data;
+      })
+
+    },
   }
 }
 </script>

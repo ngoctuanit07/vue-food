@@ -46,34 +46,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="checkbox">
-                <div class="item-checkbox">
-                    <h5>Thêm</h5>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle1"> Trứng chiên</label> <br>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
-                    <label for="vehicle1"> Chả lụa</label>
-                </div>
-                <div class="btn-sum">
-                    <div class="btn-check-box  ">
-                        <a href="#0" class="tru">-</a>
-                        <p>2</p>
-                        <a href="#0" class="cong">+</a>
-                    </div>
-                    <div class="btn-check-box  ">
-                        <a href="#0" class="tru">-</a>
-                        <p>2</p>
-                        <a href="#0" class="cong">+</a>
-                    </div>
-                </div>
-
-
-                <div class="p">
-                    <p>P300</p>
-                    <p>P300</p>
-                </div>
-            </div> -->
-
             <div class="ghichu">
               <h5>Ghi chú</h5>
               <input type="text">
@@ -163,15 +135,11 @@
       <div class="silbar-thucdon col-2">
         <div class="mini-silbar  col-2 position-fixed">
           <div class="title-silbar">
-            <a href="index.html"><h1>VFOOD.PH</h1></a>
+            <a href="/"><h1>VFOOD.PH</h1></a>
           </div>
           <div class="list-thucdon">
             <ul>
-              <li class="active" > <a href="" class="active">CƠM VĂN PHÒNG</a> </li>
-              <li> <a href=""> BÚN, PHỞ</a></li>
-              <li> <a href="">MÓN HẢI SẢN</a> </li>
-              <li><a href="">ĂN VẶT</a></li>
-
+              <li v-for="(item,i) in categories" :key="i"><a>{{ item.name }}</a></li>
             </ul>
           </div>
           <div class="footer-thucdon">
@@ -201,44 +169,14 @@
         </div>
 
       </div>
-      <div class="thucdon col-8">
-        <div class="products nowrap ">
-          <div class="box-product">
+      <div class="thucdon col-8 row">
+        <div v-for="(item,i) in listProducts" :key="i" class="products nowrap ">
+          <div   class="box-product">
             <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
+              <h2>{{item.name}}</h2>
+              <h1>{{item.price}}</h1>
               <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
+                {{item.detail}}
               </p>
               <div class="btn-datngay">
                 <a href="#modal-chitiet">ĐẶT MÓN</a>
@@ -249,102 +187,9 @@
             </div>
           </div>
 
-        </div>
-        <div class="products nowrap">
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
 
         </div>
-        <div class="products nowrap">
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product">
-            <div class="price">
-              <h2>RAU MUỐNG XÀO CẢI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay">
-                <a href="#modal-chitiet">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-        </div>
+
         <div class="footer-thucdon-main row">
           <div class="item-footer-thucdon col-4">
             <span>VFOOD.PH</span>
@@ -406,7 +251,7 @@
               <div class="edit">
                 <p>P300</p>
                 <a href="#modal-chinhsua"><img src="@/assets/edit.png" alt=""></a>
-                <p> <a href=""> Xóa</a></p>
+                <p><a href=""> Xóa</a></p>
               </div>
             </div>
             <div class="item-giohang">
@@ -425,7 +270,7 @@
               <div class="edit">
                 <p>P300</p>
                 <a href="#modal-chinhsua"><img src="@/assets/edit.png" alt=""></a>
-                <p> <a href=""> Xóa</a></p>
+                <p><a href=""> Xóa</a></p>
               </div>
             </div>
             <div class="item-giohang">
@@ -444,14 +289,14 @@
               <div class="edit">
                 <p>P300</p>
                 <a href="#modal-chinhsua"><img src="@/assets/edit.png" alt=""></a>
-                <p> <a href=""> Xóa</a></p>
+                <p><a href=""> Xóa</a></p>
               </div>
             </div>
           </div>
           <div class="thanhtoan">
             <p>Tạm tính</p>
             <p>P300</p>
-            <button  @click="thanhtoanDon()" class="btn btn-primary">Thanh toán</button>
+            <button @click="thanhtoanDon()" class="btn btn-primary">Thanh toán</button>
           </div>
         </div>
 
@@ -459,18 +304,18 @@
     </div>
     <div class="thucdon-mobile ">
       <div class="header ">
-        <div class="logo"><a href="index.html">VFOOD.COM</a> </div>
+        <div class="logo"><a href="/">VFOOD.COM</a></div>
         <div class="btn-mobile">
           <a href="#modal" class="btn-thucdon-mobile">THỰC ĐƠN</a>
           <a href=""><img src="@/assets/ngon-ngu-mobile.png" alt="" width="80%"></a>
-          <button href="" onclick=open_nav() ><img src="@/assets/menu-mobile.png" alt="" width="80%"></button>
+          <button href="" onclick=open_nav()><img src="@/assets/menu-mobile.png" alt="" width="80%"></button>
         </div>
       </div>
       <div class="menu ">
         <div class="menu-silbar-h menu-thucdon" id="nav">
           <ul>
-            <li><a href="/"  class="tracuu">Trang chủ</a></li>
-            <li><a href="/"  c class="tracuu">Tra cứu đơn hàng</a></li>
+            <li><a href="/" class="tracuu">Trang chủ</a></li>
+            <li><a href="/" c class="tracuu">Tra cứu đơn hàng</a></li>
             <li>Về Chúng Tôi</li>
             <li>Chính Sách VFOOD.PH</li>
             <li>Chính sách và phí giao hàng</li>
@@ -485,19 +330,10 @@
       </div>
       <div class="main-thucdon-mobile">
         <div class="m " id="myHeader">
-          <nav class="mobile-category  " >
+          <nav class="mobile-category  ">
             <ul class="mobile-category-list ">
-              <li class="mobile-category-item">
-                <a href="" class="mobile-category-link">CƠM VĂN PHÒNG</a>
-              </li>
-              <li class="mobile-category-item">
-                <a href="" class="mobile-category-link">BÚN PHỞ</a>
-              </li>
-              <li class="mobile-category-item">
-                <a href="" class="mobile-category-link">MÓN HẢI SẢN</a>
-              </li>
-              <li class="mobile-category-item">
-                <a href="" class="mobile-category-link">ĂN VẶT</a>
+              <li v-for="(item,i) in categories" :key="i" class="mobile-category-item">
+                <a href="" class="mobile-category-link">{{ item.name }}</a>
               </li>
             </ul>
             <div class="search-btn" onclick="open_search_mobile()">
@@ -522,12 +358,12 @@
 
 
         <div class="products">
-          <div class="box-product product-mobile">
+          <div  v-for="(item,i) in listProducts" :key="i" class="box-product product-mobile">
             <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
+              <h2>{{item.name}}</h2>
+              <h1>{{item.price}}</h1>
               <p>Thành phần: <br>
-                Rau muống, tỏi
+                {{item.detail}}
               </p>
               <div class="btn-datngay btn-datngay-mobile">
                 <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
@@ -537,340 +373,9 @@
               <img src="@/assets/sanpham.png" alt="">
             </div>
           </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-          <div class="box-product product-mobile">
-            <div class="price price-mobile">
-              <h2>RAU MUỐNG XÀO TỎI</h2>
-              <h1>P150</h1>
-              <p>Thành phần: <br>
-                Rau muống, tỏi
-              </p>
-              <div class="btn-datngay btn-datngay-mobile">
-                <a href="#modal-chitiet-mobile">ĐẶT MÓN</a>
-              </div>
-            </div>
-            <div class="img-product img-product-mobile">
-              <img src="@/assets/sanpham.png" alt="">
-            </div>
-          </div>
-
-        </div>
-        <!-- <div class="products ">
-
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
 
 
         </div>
-        <div class="products ">
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
-
-
-        </div>
-        <div class="products ">
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
-
-
-        </div>
-        <div class="products ">
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
-            <div class="box-product product-mobile">
-                <div class="price price-mobile">
-                    <h2>RAU MUỐNG XÀO TỎI</h2>
-                    <h1>P150</h1>
-                    <p>Thành phần: <br>
-                        Rau muống, tỏi
-                    </p>
-                    <div class="btn-datngay btn-datngay-mobile">
-                        <a href="#modal-chitiet">ĐẶT MÓN</a>
-                    </div>
-                </div>
-                <div class="img-product img-product-mobile">
-                    <img src="@/assets/sanpham.png" alt="">
-                </div>
-            </div>
-
-
-        </div> -->
       </div>
       <div class="xemgiohang">
         <div class="item">
@@ -880,16 +385,10 @@
           <p>P300</p>
         </div>
         <div class="item">
-          <a href="#modal-giohangmobile">Xem giỏ  </a>
+          <a href="#modal-giohangmobile">Xem giỏ </a>
         </div>
       </div>
     </div>
-
-
-
-
-
-
 
 
     <div class="modal" id="modal-chitiet-mobile">
@@ -962,9 +461,6 @@
     </div>
 
 
-
-
-
     <div class="modal" id="modal-chinhsua-mobile">
       <div class="modal__dialog">
         <section class="modal__content modal-chitiet modal-chitiet-mobile">
@@ -1035,7 +531,6 @@
     </div>
 
 
-
     <div class="modal" id="modal-giohangmobile">
       <div class="modal__dialog">
         <section class="modal__content modal-chitiet giohang-mobile">
@@ -1064,7 +559,7 @@
                 <div class="edit edit-mobile">
                   <p>P300</p>
                   <a href="#modal-chinhsua-mobile"><img src="@/assets/edit.png" alt=""></a>
-                  <p> <a href=""> Xóa</a></p>
+                  <p><a href=""> Xóa</a></p>
                 </div>
               </div>
               <div class="item-giohang">
@@ -1083,7 +578,7 @@
                 <div class="edit edit-mobile">
                   <p>P300</p>
                   <a href="#modal-chinhsua-mobile"><img src="@/assets/edit.png" alt=""></a>
-                  <p> <a href=""> Xóa</a></p>
+                  <p><a href=""> Xóa</a></p>
                 </div>
               </div>
               <div class="item-giohang">
@@ -1102,7 +597,7 @@
                 <div class="edit edit-mobile">
                   <p>P300</p>
                   <a href="#modal-chinhsua-mobile"><img src="@/assets/edit.png" alt=""></a>
-                  <p> <a href=""> Xóa</a></p>
+                  <p><a href=""> Xóa</a></p>
                 </div>
               </div>
               <div class="item-giohang">
@@ -1121,27 +616,28 @@
                 <div class="edit edit-mobile">
                   <p>P300</p>
                   <a href="#modal-chinhsua-mobile"><img src="@/assets/edit.png" alt=""></a>
-                  <p> <a href=""> Xóa</a></p>
+                  <p><a href=""> Xóa</a></p>
                 </div>
-              </div><div class="item-giohang">
-              <div class="item-cart">
-                <img src="@/assets/sp-giohang2-removebg-preview.png" alt="" width="60%">
-                <span>Phở bò đặc biệt</span>
-                <p>Phở bò phúc đặc biệt</p>
-                <p>Khăn lạnh</p>
-                <p>Bò viên</p>
               </div>
-              <div class="item-btn">
-                <a href="">-</a>
-                <p>2</p>
-                <a href="">+</a>
+              <div class="item-giohang">
+                <div class="item-cart">
+                  <img src="@/assets/sp-giohang2-removebg-preview.png" alt="" width="60%">
+                  <span>Phở bò đặc biệt</span>
+                  <p>Phở bò phúc đặc biệt</p>
+                  <p>Khăn lạnh</p>
+                  <p>Bò viên</p>
+                </div>
+                <div class="item-btn">
+                  <a href="">-</a>
+                  <p>2</p>
+                  <a href="">+</a>
+                </div>
+                <div class="edit edit-mobile">
+                  <p>P300</p>
+                  <a href="#modal-chinhsua-mobile"><img src="@/assets/edit.png" alt=""></a>
+                  <p><a href=""> Xóa</a></p>
+                </div>
               </div>
-              <div class="edit edit-mobile">
-                <p>P300</p>
-                <a href="#modal-chinhsua-mobile"><img src="@/assets/edit.png" alt=""></a>
-                <p> <a href=""> Xóa</a></p>
-              </div>
-            </div>
             </div>
 
           </div>
@@ -1159,6 +655,132 @@
   </div>
 </template>
 <style scoped>
+.products {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 25%;
+}
+.footer-thucdon-main {
+  margin: 0px;
+  text-align: center;
+  background-color: #487025;
+  width: 100%;
+}
+.ft {
+  display: flex;
+  justify-content: center;
+  background-color: #082A07;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+.checkout {
+  display: flex;
+  justify-content: center !important;
+  padding-top: 10px;
+  padding-bottom: 90px;
+}
+
+/*
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+
+  /* CSS */
+
+}
+
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+
+  /* CSS */
+
+}
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* CSS */
+
+}
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+  /* CSS */
+
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  /* CSS */
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .btn-datngay-mobile a {
+    padding: 5% !important;
+    text-align: center !important;
+  }
+  .products{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  /* CSS */
+  .mobile-category-item {
+    width: 18%;
+  }
+
+  .mobile-category-link {
+    text-align: center;
+    text-decoration: none;
+    color: #487025;
+    font-size: 12px;
+    line-height: var(--line-height);
+    width: 100px;
+    height: calc(var(--line-height) * 2);
+    border-radius: 4px;
+    font-weight: 400;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+
+}
+
 a:not([href]):not([tabindex]) {
   color: #487025;
   text-decoration: none;
@@ -1166,16 +788,45 @@ a:not([href]):not([tabindex]) {
 </style>
 
 <script>
-export default {
- name:"Thucdon",
-  data(){
-   return {
+import actionFood from "@/actions/food";
 
-   }
+export default {
+  name: "Thucdon",
+  data() {
+    return {
+      categories: [],
+      menuFooter:[],
+      listProducts:[
+        {
+          name:"Rau muống xào cải",
+          price:"p150",
+          detai:"Rau muống , tỏi"
+        }
+      ]
+
+    }
 
   },
-  methods:{
-    thanhtoanDon(){
+  mounted() {
+    this.getCategory();
+    this.getMenuFooter();
+  },
+  methods: {
+    getCategory() {
+      let vm = this;
+      actionFood.getCategory().then(function (res) {
+        vm.categories = res.data;
+      })
+
+    },
+    getMenuFooter() {
+      let vm = this;
+      actionFood.getCategory().then(function (res) {
+        vm.menuFooter = res.data;
+      })
+
+    },
+    thanhtoanDon() {
       this.$router.push('Thongtindon')
     }
 

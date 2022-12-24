@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="home row">
-      <div class="img-home col-12 col-sm-5">
+      <div class="img-home col-sm-4">
         <img src="@/assets/flat-lay-tray-with-vientamese-food.png" alt="" height="100%">
         <div class="logo-name">
           <h3>VFOOD.COM</h3>
@@ -41,7 +41,7 @@
       </div>
 
 
-      <div class="content-main col-sm-7">
+      <div class="content-main col-sm-8">
         <div class="content-left-head">
           <div class="btn-home">
             <a href="#modal" class="btn-thucdon ">THỰC ĐƠN</a>
@@ -98,10 +98,7 @@
             </div>
             <div class="footer-main-item col-4">
               <ul>
-                <li>Về chúng tôi</li>
-                <li>Chính sách VFOOD.PH</li>
-                <li>Chính sách và phí giao hàng</li>
-                <li>Blog</li>
+                <li v-for="(item,i) in menuFooter" :key="i">{{item.name}}</li>
               </ul>
             </div>
           </div>
@@ -124,12 +121,13 @@
       <div class="menu">
         <div class="menu-silbar-h" id="nav">
           <ul>
-            <li><a href="/"  class="tracuu">Trang chủ</a></li>
-            <li><a @click="chuyentracuudonhang()" class="tracuu">Tra cứu đơn hàng</a></li>
-            <li>Về Chúng Tôi</li>
-            <li>Chính Sách VFOOD.PH</li>
-            <li>Chính sách và phí giao hàng</li>
-            <li>Blog</li>
+<!--            <li><a href="/"  class="tracuu">Trang chủ</a></li>-->
+<!--            <li><a @click="chuyentracuudonhang()" class="tracuu">Tra cứu đơn hàng</a></li>-->
+<!--            <li>Về Chúng Tôi</li>-->
+<!--            <li>Chính Sách VFOOD.PH</li>-->
+<!--            <li>Chính sách và phí giao hàng</li>-->
+<!--            <li>Blog</li>-->
+            <li v-for="(item,i) in menuFooter" :key="i">{{item.name}}</li>
           </ul>
           <div class="icon-close" onclick=close_nav()>
             <i class="fa fa-times" aria-hidden="true"></i>
@@ -192,12 +190,18 @@
 </template>
 
 <script>
+import actionFood from "@/actions/food";
+
 export default {
   name:"Home",
   data(){
     return{
+      menuFooter:[]
 
     }
+  },
+  mounted() {
+    this.getMenuFooter();
   },
   methods:{
     chuyenthucdon(){
@@ -208,7 +212,14 @@ export default {
     },
     chuyentracuudonhang(){
       this.$router.push('Tracuudon')
-    }
+    },
+    getMenuFooter() {
+      let vm = this;
+      actionFood.getMenuFooter().then(function (res) {
+        vm.menuFooter = res.data;
+      })
+
+    },
 
   }
 }

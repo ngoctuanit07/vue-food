@@ -1,12 +1,16 @@
 import CallAPI from "@/service/CallApi";
 import * as Types from "@/constants/food";
-
 export default {
-    async Menu(number) {
-        let data = {
-            employeeCategoryID: number,
+    async getCategory() {
+        let obj = {
         };
-        let result = await CallAPI.getData(Types.Menu, data);
+        let result = await CallAPI.getData(Types.Categories, obj);
+        return result.data;
+    },
+    async getMenuFooter() {
+        let obj = {
+        };
+        let result = await CallAPI.getData(Types.Menufooter, obj);
         return result.data;
     }
 };

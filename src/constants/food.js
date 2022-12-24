@@ -1,2 +1,3 @@
-export const Login = "login";
-export const Menu = "Select_All_Menu2_Huu_2";
+export const Categories = "api/v1/categories";
+export const Menufooter = "api/v1/menufooter";
+

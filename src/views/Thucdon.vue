@@ -174,10 +174,9 @@
           <div   class="box-product">
             <div class="price">
               <h2>{{item.name}}</h2>
-              <h1>{{item.price}}</h1>
-              <p>Thành phần: <br>
-                {{item.detail}}
-              </p>
+              <h1>P{{item.price}}</h1>
+              <p>Thành phần:</p>
+              <p v-html="item.description"></p>
               <div class="btn-datngay">
                 <a href="#modal-chitiet">ĐẶT MÓN</a>
               </div>
@@ -800,7 +799,7 @@ export default {
         {
           name:"Rau muống xào cải",
           price:"p150",
-          detai:"Rau muống , tỏi"
+          description:"Rau muống , tỏi"
         }
       ]
 
@@ -810,6 +809,7 @@ export default {
   mounted() {
     this.getCategory();
     this.getMenuFooter();
+    this.getproductlist();
   },
   methods: {
     getCategory() {
@@ -823,6 +823,13 @@ export default {
       let vm = this;
       actionFood.getCategory().then(function (res) {
         vm.menuFooter = res.data;
+      })
+
+    },
+    getproductlist() {
+      let vm = this;
+      actionFood.getproductlist().then(function (res) {
+        vm.listProducts = res.data;
       })
 
     },
